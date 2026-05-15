@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>labyrt | portfolio</title>
+    <meta name="description" content="Portfólio minimalista de labyrt.">
+
+    <link rel="stylesheet" href="./main.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="topbar">
+        <div class="container topbar-inner">
+            <a class="brand" href="#top">labyrt</a>
+
+            <nav class="nav">
+                <a href="#works">works</a>
+                <a href="#contact">contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main id="top">
+        <section class="hero">
+            <div class="container hero-grid">
+                <div class="hero-copy">
+                    <p class="eyebrow">portfolio</p>
+                    <h1>labyrt</h1>
+                    <p class="hero-subtitle">selected works 2024</p>
+                </div>
+
+                <aside class="hero-card">
+                    <div class="hero-card-top">
+                        <span>visual index</span>
+                        <span>004</span>
+                    </div>
+
+                    <div class="hero-profile">
+                        <img src="./images/profile.png" alt="labyrt">
+                    </div>
+
+                    <div class="hero-card-bottom">
+                        <span>minimal archive</span>
+                        <span>art / design / object</span>
+                    </div>
+                </aside>
+            </div>
+        </section>
+
+        <section class="works" id="works">
+            <div class="container works-stack">
+                <article class="work reveal">
+                    <div class="work-copy">
+                        <span class="work-number">01</span>
+                        <h2>Cidade sem título</h2>
+                        <p>Bienal SP · 2024</p>
+                    </div>
+
+                    <figure class="work-media work-media-contain">
+                        <img src="./images/project-1.jpg" alt="Cidade sem título">
+                    </figure>
+                </article>
+
+                <article class="work work-right reveal">
+                    <div class="work-copy">
+                        <span class="work-number">02</span>
+                        <h2>Elegance</h2>
+                        <p>Victorica, La Pampa · 2024</p>
+                    </div>
+
+                    <figure class="work-media work-media-contain">
+                        <img src="./images/project-2.jpg" alt="Elegance">
+                    </figure>
+                </article>
+
+                <article class="work reveal">
+                    <div class="work-copy">
+                        <span class="work-number">03</span>
+                        <h2>Cidade sem teto</h2>
+                        <p>Bienal SP · 2024</p>
+                    </div>
+
+                    <figure class="work-media work-media-full">
+                        <img src="./images/project-3.jpg" alt="Cidade sem teto">
+                    </figure>
+                </article>
+            </div>
+        </section>
+
+        <section class="contact" id="contact">
+            <div class="container contact-grid">
+                <div class="contact-title">
+                    <p class="eyebrow">contact</p>
+                    <h2>labyrt</h2>
+                </div>
+
+                <form class="contact-form">
+                    <input type="text" placeholder="Nome" required>
+                    <input type="email" placeholder="E-mail" required>
+                    <textarea placeholder="Mensagem" required></textarea>
+                    <button type="submit">enviar</button>
+                </form>
+
+                <div class="socials">
+                    <a href="#" aria-label="GitHub">
+                        <img src="./images/github.png" alt="GitHub">
+                    </a>
+                    <a href="#" aria-label="Instagram">
+                        <img src="./images/instagram.png" alt="Instagram">
+                    </a>
+                    <a href="#" aria-label="LinkedIn">
+                        <img src="./images/linkedin.png" alt="LinkedIn">
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-inner">
+            <span>labyrt</span>
+            <a href="#top">back to top</a>
+        </div>
+    </footer>
+
+    <script>
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                }
+            });
+        }, { threshold: 0.18 });
+
+        document.querySelectorAll('.reveal').forEach((el) => revealObserver.observe(el));
+
+        const works = document.querySelectorAll('.work');
+
+        function updateParallax() {
+            const vh = window.innerHeight;
+
+            works.forEach((work) => {
+                const rect = work.getBoundingClientRect();
+                const progress = 1 - Math.min(Math.max(rect.top / vh, 0), 1);
+                work.style.setProperty('--parallax', progress.toFixed(3));
+            });
+
+            requestAnimationFrame(updateParallax);
+        }
+
+        updateParallax();
+    </script>
+</body>
+</html>

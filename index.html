@@ -3,215 +3,108 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#050505" />
-  <meta name="description" content="Supergambiarra Eletrônica — portfolio autoral de Lucy Mazzini e Aria Borba. Arduino, Processing, instalações, circuito e imagem em movimento." />
+  <meta name="theme-color" content="#f1eee6" />
+  <meta name="description" content="Supergambiarra Eletrônica — portfólio de Lucy Mazzini e Aria Borba com Arduino, Processing, eletrônica, instalação e vídeo." />
   <title>Supergambiarra Eletrônica — Lucy Mazzini + Aria Borba</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,600;0,6..96,900;1,6..96,400&family=Syne:wght@400..800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Roboto+Condensed:wght@400;600;700;900&family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./main.css" />
   <script defer src="./main.js"></script>
 </head>
 <body>
-  <div class="progress" aria-hidden="true"><span></span></div>
-  <div class="cursor" aria-hidden="true"><span>VER</span></div>
+  <canvas id="electricCanvas" aria-hidden="true"></canvas>
+  <div class="probe" aria-hidden="true"><i></i><b></b></div>
+  <div class="scroll-progress" aria-hidden="true"><span></span></div>
 
   <header class="site-header">
-    <a class="wordmark" href="#top" aria-label="Supergambiarra Eletrônica — início">
-      <span>SUPER</span><span>GAMBIARRA</span><span>ELETRÔNICA</span>
-    </a>
+    <a class="brand" href="#top">SUPERGAMBIARRA ELETRÔNICA</a>
     <nav aria-label="Navegação principal">
       <a href="#sobre">sobre</a>
-      <a href="#projetos">projetos</a>
+      <a href="#sistema-exposto">Sistema Exposto</a>
       <a href="#videos">vídeos</a>
       <a href="#contato">contato</a>
     </nav>
-    <div class="header-meta">SP / BR · 2026</div>
+    <span class="edition">SP / BR — 2026</span>
   </header>
 
   <main id="top">
-    <section class="hero" aria-labelledby="hero-title">
-      <canvas id="signalCanvas" class="signal-canvas" aria-hidden="true"></canvas>
-      <svg class="hero-curve" viewBox="0 0 1200 900" preserveAspectRatio="none" aria-hidden="true">
-        <path d="M-120,720 C220,510 470,820 820,570 C1010,435 1090,235 1320,105" />
-      </svg>
-      <div class="hero-index" aria-hidden="true">SGE—001</div>
-      <div class="hero-copy">
-        <p class="eyebrow reveal">laboratório artístico · circuito · código · matéria</p>
-        <h1 id="hero-title" class="display-title reveal">
-          <span>SUPER</span>
-          <span class="serif">gambiarra</span>
-          <span>ELETRÔNICA</span>
-        </h1>
-        <p class="hero-sub reveal">Portfolio de experimentações em Arduino, Processing, vídeo, instalação e construção eletrônica.</p>
+    <section class="hero section-paper" aria-labelledby="hero-title">
+      <div class="hero-meta mono reveal">
+        <span>ARDUINO</span><span>PROCESSING</span><span>ELETRÔNICA</span><span>VÍDEO</span>
       </div>
-      <div class="hero-media reveal" data-parallax="0.035">
-        <div class="video-frame hero-video-frame">
-          <video class="hero-video" autoplay muted loop playsinline preload="auto" poster="https://drive.google.com/thumbnail?id=1KcezxCvA__Im8ytMaETh_ZJCtRYrYgh-&sz=w1800">
-            <source src="https://drive.google.com/uc?export=download&id=1KcezxCvA__Im8ytMaETh_ZJCtRYrYgh-" type="video/mp4" />
-          </video>
-          <div class="video-corner corner-a"></div><div class="video-corner corner-b"></div>
-          <span class="hero-media-label">logo / motion study</span>
-        </div>
+      <div class="hero-title-wrap reveal">
+        <h1 id="hero-title"><span class="line line-super">SUPER</span><span class="line line-gambiarra">GAMBIARRA</span><span class="line line-eletronica">ELETRÔNICA</span></h1>
       </div>
-      <div class="hero-bottom reveal">
-        <p>Lucy Mazzini + Aria Borba</p>
-        <div class="hero-actions">
-          <a class="arrow-link" href="#projetos">ver projetos <span>↘</span></a>
-          <a class="arrow-link" href="#videos">assistir vídeos <span>↘</span></a>
-        </div>
+      <div class="hero-copy reveal">
+        <p>Portfólio de <strong>Lucy Mazzini</strong> e <strong>Aria Borba</strong>.</p>
+        <p>Arduino Uno R3, sensores, motores, solda, Processing e vídeo.</p>
       </div>
-      <div class="scroll-mark" aria-hidden="true"><span>scroll</span><i></i></div>
+      <figure class="hero-logo reveal" data-hot>
+        <img class="hero-animated-logo" src="https://drive.google.com/thumbnail?id=1KcezxCvA__Im8ytMaETh_ZJCtRYrYgh-&sz=w1800" alt="Logo da Supergambiarra Eletrônica em composição animada">
+        <figcaption><span>LOGO ANIMADO</span><span>SUPERGAMBIARRA / 2026</span></figcaption>
+        <i class="block red"></i><i class="block blue"></i><i class="block acid"></i>
+      </figure>
+      <a class="hero-jump mono" href="#sistema-exposto">VER O PROJETO PRINCIPAL ↓</a>
     </section>
 
-    <section id="sobre" class="about section-white">
-      <div class="section-number">01</div>
+    <section id="sobre" class="about section-ink">
+      <div class="section-tag mono">01 / SOBRE</div>
       <div class="about-grid">
-        <p class="kicker reveal">Não é tecnologia como acabamento. É tecnologia como matéria.</p>
-        <div class="about-statement reveal">
-          <p><em>Supergambiarra Eletrônica</em> é um laboratório artístico e experimental criado por <strong>Lucy Mazzini</strong> e <strong>Aria Borba</strong>.</p>
-          <p>Arduino funciona como núcleo físico: sensores, motores, luz, fios, solda e resposta. Processing prolonga o circuito para a imagem, o ritmo e o movimento.</p>
+        <h2 class="reveal">ARDUINO.<br>PROCESSING.<br><span>MONTAGEM.</span><br>VÍDEO.</h2>
+        <div class="about-copy reveal">
+          <p>Supergambiarra Eletrônica reúne trabalhos de Lucy Mazzini e Aria Borba construídos com microcontroladores, sensores, motores, fios, solda e código.</p>
+          <p>O portfólio documenta tanto as obras instaladas quanto as etapas que normalmente ficam fora da exposição: teste de bancada, adaptação mecânica, erro de leitura, montagem, programação e registro em vídeo.</p>
+          <p>Processing aparece nos estudos visuais e nas edições como continuação do trabalho com sinal, repetição e resposta.</p>
         </div>
       </div>
-      <div class="taxonomy reveal" aria-label="Informações do projeto">
-        <article><span>autoria</span><strong>Lucy Mazzini<br>Aria Borba</strong></article>
-        <article><span>núcleo</span><strong>Arduino<br>eletrônica criativa</strong></article>
-        <article><span>extensões</span><strong>Processing<br>vídeo · sensores</strong></article>
-        <article><span>território</span><strong>instalação<br>objeto · protótipo</strong></article>
-      </div>
-      <div class="marquee" aria-hidden="true">
-        <div>ARTE + CIRCUITO · GAMBIARRA COMO LINGUAGEM · CORPO + SENSOR · ERRO + INVENÇÃO · ARTE + CIRCUITO · GAMBIARRA COMO LINGUAGEM · CORPO + SENSOR · ERRO + INVENÇÃO ·</div>
-      </div>
+      <div class="tool-strip reveal" aria-label="Ferramentas e técnicas"><span>Arduino Uno R3</span><span>sensores</span><span>motor DC</span><span>relé</span><span>MOSFET</span><span>Processing</span><span>solda</span><span>vídeo</span></div>
     </section>
 
-    <section id="projetos" class="projects section-black">
-      <div class="section-head reveal">
-        <span class="section-number">02</span>
-        <h2>Trabalhos<br><em>selecionados</em></h2>
-        <p>Construções, instalações, estudos de circuito e visualidades que partem do fazer manual e do código.</p>
-      </div>
-
-      <article class="feature-work reveal" data-cursor="abrir">
-        <div class="feature-media" data-parallax="0.018">
-          <img src="https://drive.google.com/thumbnail?id=1KiKiJ96_MfHETMW7nxieYnocGGz1eecY&sz=w1800" alt="Instalação eletrônica exposta em ambiente expositivo" loading="lazy" />
-          <span class="media-tag">instalação / Arduino / sensor</span>
-        </div>
-        <div class="feature-copy">
-          <div class="work-topline"><span>SGE—01</span><span>2026</span></div>
-          <h3>Sistema<br><em>Exposto</em></h3>
-          <p>Um corpo eletrônico vulnerável que percebe aproximações e responde em gesto. Circuitos e sensores operam menos como máquina utilitária e mais como sistema sensível: atento, instintivo, em vigília.</p>
-          <div class="materials">silicone · cabelo humano · Arduino Uno R3 · sensores · cobre · motor DC · lâmpada · MOSFET · relé · madeira</div>
-          <button class="text-button js-open-media" data-src="https://drive.google.com/uc?export=download&id=1h4R6qcdQ-OozdHZS8L86oEw6yJueI-rb" data-title="Sistema Exposto — instalação">ver em movimento ↗</button>
-        </div>
-      </article>
-
-      <div class="work-grid">
-        <article class="work-card reveal" data-cursor="ver">
-          <div class="work-image portrait"><img src="https://drive.google.com/thumbnail?id=1rtpdmugNIc_Sdmq_hbKKlDOVgyem_Cad&sz=w1800" alt="Processo material de construção de objeto escultórico" loading="lazy"></div>
-          <div class="work-card-info"><span>SGE—02 / processo</span><h3>Corpo como <em>protótipo</em></h3><p>Matéria orgânica, objeto e circuito dividindo o mesmo estágio de pesquisa.</p></div>
-        </article>
-        <article class="work-card reveal offset" data-cursor="ver">
-          <div class="work-image portrait"><img src="https://drive.google.com/thumbnail?id=1_Q7O5KZ_0SUS1RRdwqpNcXakfFKRZWFB&sz=w1800" alt="Detalhe de fios, circuito e mecanismo em processo" loading="lazy"></div>
-          <div class="work-card-info"><span>SGE—03 / construção</span><h3>Fio como <em>desenho</em></h3><p>Estruturas aparentes: a ligação elétrica também compõe a forma.</p></div>
-        </article>
-        <article class="work-card reveal wide" data-cursor="ver">
-          <div class="work-image landscape"><img src="https://drive.google.com/thumbnail?id=1Q7mLNPrgASRzyd_X8VGDJmcqpuee28rh&sz=w1800" alt="Estrutura eletrônica em montagem sobre banco de madeira" loading="lazy"></div>
-          <div class="work-card-info"><span>SGE—04 / montagem</span><h3>Máquina <em>sem carcaça</em></h3><p>O sistema não esconde sua engenharia; fios, placa e suporte permanecem como linguagem.</p></div>
-        </article>
-      </div>
-    </section>
-
-    <section class="exposed section-white" aria-label="Sistema Exposto em detalhe">
-      <div class="exposed-collage">
-        <figure class="collage-a reveal"><img src="https://drive.google.com/thumbnail?id=1s27KD_xfe_BO3O71jzClAVsDbmpoB-vB&sz=w1800" alt="Vista frontal da instalação eletrônica" loading="lazy"></figure>
-        <figure class="collage-b reveal"><img src="https://drive.google.com/thumbnail?id=1CQLN3oUKhweRH1UlVGAHqbr8UBGld68u&sz=w1800" alt="Detalhe de circuito em construção" loading="lazy"></figure>
-        <figure class="collage-c reveal"><img src="https://drive.google.com/thumbnail?id=1MKcrnAKRBPyw0ZRtQ0NC3YCcHOngZkZ8&sz=w1800" alt="Estudo visual e técnico em preto e branco" loading="lazy"></figure>
-        <div class="collage-copy reveal">
-          <span>corpo / presença / resposta</span>
-          <blockquote>“Ao sentir, entende — e por isso sobrevive.”</blockquote>
-          <p>O dispositivo não tenta parecer invisível. Ele deixa a técnica exposta e transforma aproximação em acontecimento.</p>
+    <section id="sistema-exposto" class="project section-paper">
+      <div class="section-tag mono">02 / SISTEMA EXPOSTO</div>
+      <div class="project-head">
+        <div class="project-title reveal"><span class="title-chip blue">INSTALAÇÃO</span><h2>SISTEMA<br>EXPOSTO</h2></div>
+        <div class="project-intro reveal">
+          <p class="lead">Um órgão instalado no espaço reage quando alguém se aproxima.</p>
+          <p>Sensores detectam presença; motor DC e lâmpada respondem em movimento e pulso. A montagem combina silicone, cabelo humano, cabos, musgo falso, fios de cobre, solda, madeira e um Arduino Uno R3.</p>
+          <p>O circuito permanece visível porque faz parte da própria estrutura da obra.</p>
         </div>
       </div>
+      <div class="project-stage">
+        <figure class="stage-main reveal" data-hot><iframe src="https://drive.google.com/file/d/1XptZejpY3dkCRRJu6stgiKtmWno60dNc/preview" title="Sistema Exposto — registro em vídeo" allow="autoplay; fullscreen" allowfullscreen loading="lazy"></iframe><figcaption class="mono">REGISTRO DA INSTALAÇÃO / REPRODUZIR NO PLAYER</figcaption></figure>
+        <figure class="stage-photo stage-a reveal"><img src="https://drive.google.com/thumbnail?id=1_Q7O5KZ_0SUS1RRdwqpNcXakfFKRZWFB&sz=w1800" alt="Estrutura do Sistema Exposto durante a montagem"><figcaption class="mono">ESTRUTURA / MONTAGEM</figcaption></figure>
+        <figure class="stage-photo stage-b reveal"><img src="https://drive.google.com/thumbnail?id=1CQLN3oUKhweRH1UlVGAHqbr8UBGld68u&sz=w1800" alt="Sistema Exposto em frente a um espelho durante o processo"><figcaption class="mono">TESTE DE POSICIONAMENTO</figcaption></figure>
+        <figure class="stage-photo stage-c reveal"><img src="https://drive.google.com/thumbnail?id=1SvyZ6qioEgIUSJ8uOeVX5U4NsUks7rwL&sz=w1800" alt="Estrutura de madeira e cabos do Sistema Exposto"><figcaption class="mono">SUPORTE / CABOS / ALIMENTAÇÃO</figcaption></figure>
+      </div>
+      <div class="project-data reveal"><div><span class="mono">MICROCONTROLADOR</span><strong>Arduino Uno R3</strong></div><div><span class="mono">ATUAÇÃO</span><strong>motor DC + lâmpada</strong></div><div><span class="mono">ELETRÔNICA</span><strong>sensores, MOSFET, diodo e relé</strong></div><div><span class="mono">MATERIAIS</span><strong>silicone, cabelo humano, cobre, madeira e musgo falso</strong></div></div>
+      <a class="press-link reveal" href="https://jornal.usp.br/cultura/exposicao-na-usp-une-a-cidade-o-ambiente-e-a-educacao/" target="_blank" rel="noopener"><span class="mono">IMPRENSA / EXPOSIÇÃO</span><strong>Jornal USP — abrir matéria ↗</strong></a>
     </section>
 
-    <section id="videos" class="motion section-black">
-      <div class="section-head motion-head reveal">
-        <span class="section-number">03</span>
-        <h2>Sinais em<br><em>movimento</em></h2>
-        <p>Vídeo como registro, linguagem e extensão do circuito. Estudos em Processing, documentação de Arduino, montagem e edição.</p>
-      </div>
-      <div class="motion-grid">
-        <button class="motion-card reveal js-open-media" data-src="https://drive.google.com/uc?export=download&id=1riBEIot8w-QJ5tmhfrKBJc1BWRZWPE-r" data-title="Processing — formas">
-          <video muted loop playsinline preload="metadata" poster="https://drive.google.com/thumbnail?id=1riBEIot8w-QJ5tmhfrKBJc1BWRZWPE-r&sz=w1800"><source src="https://drive.google.com/uc?export=download&id=1riBEIot8w-QJ5tmhfrKBJc1BWRZWPE-r" type="video/mp4"></video>
-          <span class="motion-index">01</span><span class="motion-title">Processing / formas</span><span class="play-mark">↗</span>
-        </button>
-        <button class="motion-card reveal js-open-media" data-src="https://drive.google.com/uc?export=download&id=1VuXMRqbeJXrA7GWNKZMBBzB45GejSKtD" data-title="Processing — barras">
-          <video muted loop playsinline preload="metadata" poster="https://drive.google.com/thumbnail?id=1VuXMRqbeJXrA7GWNKZMBBzB45GejSKtD&sz=w1800"><source src="https://drive.google.com/uc?export=download&id=1VuXMRqbeJXrA7GWNKZMBBzB45GejSKtD" type="video/mp4"></video>
-          <span class="motion-index">02</span><span class="motion-title">Processing / barras</span><span class="play-mark">↗</span>
-        </button>
-        <button class="motion-card reveal js-open-media" data-src="https://drive.google.com/uc?export=download&id=1XptZejpY3dkCRRJu6stgiKtmWno60dNc" data-title="Circuito em movimento">
-          <video muted loop playsinline preload="metadata" poster="https://drive.google.com/thumbnail?id=1XptZejpY3dkCRRJu6stgiKtmWno60dNc&sz=w1800"><source src="https://drive.google.com/uc?export=download&id=1XptZejpY3dkCRRJu6stgiKtmWno60dNc" type="video/mp4"></video>
-          <span class="motion-index">03</span><span class="motion-title">Circuito / mecanismo</span><span class="play-mark">↗</span>
-        </button>
-        <button class="motion-card reveal js-open-media" data-src="https://drive.google.com/uc?export=download&id=1Zjs6W2YwNJFFg0eT2fdWUzLOnxk7vRYr" data-title="Bancada Arduino">
-          <video muted loop playsinline preload="metadata" poster="https://drive.google.com/thumbnail?id=1Zjs6W2YwNJFFg0eT2fdWUzLOnxk7vRYr&sz=w1800"><source src="https://drive.google.com/uc?export=download&id=1Zjs6W2YwNJFFg0eT2fdWUzLOnxk7vRYr" type="video/mp4"></video>
-          <span class="motion-index">04</span><span class="motion-title">Arduino / bancada</span><span class="play-mark">↗</span>
-        </button>
-        <button class="motion-card reveal js-open-media motion-wide" data-src="https://drive.google.com/uc?export=download&id=1hrnGtdwttfOPOOwF9Qe8AihtV5vtjSaJ" data-title="Edição / processo">
-          <video muted loop playsinline preload="metadata" poster="https://drive.google.com/thumbnail?id=1hrnGtdwttfOPOOwF9Qe8AihtV5vtjSaJ&sz=w1800"><source src="https://drive.google.com/uc?export=download&id=1hrnGtdwttfOPOOwF9Qe8AihtV5vtjSaJ" type="video/mp4"></video>
-          <span class="motion-index">05</span><span class="motion-title">Edição / construção</span><span class="play-mark">↗</span>
-        </button>
+    <section class="archive section-color" aria-labelledby="archive-title">
+      <div class="section-tag mono">03 / PROCESSO</div>
+      <div class="archive-head reveal"><h2 id="archive-title">BANCADA.<br>TESTE.<br>MONTAGEM.</h2><p>Fotografias de bancada, estrutura, materiais e estudos visuais usados durante o desenvolvimento dos trabalhos.</p></div>
+      <div class="archive-grid">
+        <figure class="archive-card c-red reveal"><img src="https://drive.google.com/thumbnail?id=1Q7mLNPrgASRzyd_X8VGDJmcqpuee28rh&sz=w1800" alt="Bancada com componentes eletrônicos e estrutura de madeira"><figcaption><b>01</b><span>montagem sobre bancada</span></figcaption></figure>
+        <figure class="archive-card c-blue reveal"><img src="https://drive.google.com/thumbnail?id=1rtpdmugNIc_Sdmq_hbKKlDOVgyem_Cad&sz=w1800" alt="Estudo escultórico segurado em uma bancada de trabalho"><figcaption><b>02</b><span>estudo de forma e material</span></figcaption></figure>
+        <figure class="archive-card c-green reveal"><img src="https://drive.google.com/thumbnail?id=1MKcrnAKRBPyw0ZRtQ0NC3YCcHOngZkZ8&sz=w1800" alt="Estudo visual digital em tela"><figcaption><b>03</b><span>estudo visual / Processing</span></figcaption></figure>
       </div>
     </section>
 
-    <section id="processo" class="process section-white">
-      <div class="section-head reveal">
-        <span class="section-number">04</span>
-        <h2>Método<br><em>instável</em></h2>
-        <p>O processo não é uma linha limpa. É um circuito de retorno: testar, errar, adaptar, montar, desmontar, registrar.</p>
-      </div>
-      <div class="process-rail" aria-label="Etapas do processo">
-        <article class="reveal"><b>01</b><h3>Pesquisar</h3><p>imaginar comportamento, matéria e presença.</p></article>
-        <article class="reveal"><b>02</b><h3>Testar</h3><p>sensor, tensão, motor, código, ruído.</p></article>
-        <article class="reveal"><b>03</b><h3>Gambiarra</h3><p>adaptar o que existe até surgir outra função.</p></article>
-        <article class="reveal"><b>04</b><h3>Programar</h3><p>Arduino como reflexo; Processing como extensão visual.</p></article>
-        <article class="reveal"><b>05</b><h3>Expor</h3><p>deixar a técnica aparente e o público completar a obra.</p></article>
-      </div>
-      <div class="manifesto reveal">
-        <p>protótipo <i>é</i> obra</p><p>erro <i>é</i> método</p><p>fio <i>é</i> desenho</p><p>resposta <i>é</i> presença</p>
+    <section id="videos" class="videos section-ink">
+      <div class="section-tag mono">04 / VÍDEOS</div>
+      <div class="videos-head reveal"><h2>PROCESSING<br>+ ARDUINO<br>EM VÍDEO.</h2><p>Registros de montagem, testes com Arduino e estudos feitos em Processing. Todos os arquivos podem ser reproduzidos sem sair da página.</p></div>
+      <div class="video-grid">
+        <article class="video-card v-acid reveal" data-hot><div class="video-wrap"><iframe src="https://drive.google.com/file/d/1riBEIot8w-QJ5tmhfrKBJc1BWRZWPE-r/preview" title="Processing — formas, cortes e repetição" allow="autoplay; fullscreen" allowfullscreen loading="lazy"></iframe></div><div class="video-label"><b>PROCESSING / 01</b><span>formas, cortes e repetição</span></div></article>
+        <article class="video-card v-cyan reveal" data-hot><div class="video-wrap wide-video"><iframe src="https://drive.google.com/file/d/1VuXMRqbeJXrA7GWNKZMBBzB45GejSKtD/preview" title="Processing — barra, ritmo e variação horizontal" allow="autoplay; fullscreen" allowfullscreen loading="lazy"></iframe></div><div class="video-label"><b>PROCESSING / 02</b><span>barra, ritmo e variação horizontal</span></div></article>
+        <article class="video-card v-red reveal" data-hot><div class="video-wrap"><iframe src="https://drive.google.com/file/d/1h4R6qcdQ-OozdHZS8L86oEw6yJueI-rb/preview" title="Arduino — bancada, display, placa e atuador" allow="autoplay; fullscreen" allowfullscreen loading="lazy"></iframe></div><div class="video-label"><b>ARDUINO / BANCADA</b><span>display, placa, atuador e teste</span></div></article>
+        <article class="video-card v-blue reveal" data-hot><div class="video-wrap vertical-video"><iframe src="https://drive.google.com/file/d/1Zjs6W2YwNJFFg0eT2fdWUzLOnxk7vRYr/preview" title="Arduino — teste de display e resposta" allow="autoplay; fullscreen" allowfullscreen loading="lazy"></iframe></div><div class="video-label"><b>ARDUINO / DISPLAY</b><span>teste de leitura e resposta</span></div></article>
       </div>
     </section>
 
-    <section class="press section-black">
-      <div class="press-line reveal">
-        <span>arquivo / exposição</span>
-        <a href="https://jornal.usp.br/cultura/exposicao-na-usp-une-a-cidade-o-ambiente-e-a-educacao/" target="_blank" rel="noopener noreferrer">
-          Jornal USP — exposição INOVA <span>↗</span>
-        </a>
-      </div>
-      <div class="press-visual reveal">
-        <img src="https://drive.google.com/thumbnail?id=1SvyZ6qioEgIUSJ8uOeVX5U4NsUks7rwL&sz=w1800" alt="Estrutura da instalação em área externa" loading="lazy">
-        <div class="press-caption">documentação / Supergambiarra Eletrônica</div>
-      </div>
-    </section>
+    <section class="method section-paper"><div class="section-tag mono">05 / MÉTODO</div><div class="method-grid"><div class="method-title reveal"><h2>PROCESSO<br>DE TRABALHO.</h2></div><ol class="method-list"><li class="reveal"><b>01</b><strong>Montar</strong><p>Componentes, suporte, sensores e alimentação são montados em bancada e testados fora da instalação.</p></li><li class="reveal"><b>02</b><strong>Programar</strong><p>O comportamento é ajustado no código: leitura, intervalo, resposta, motor, display ou saída visual.</p></li><li class="reveal"><b>03</b><strong>Testar</strong><p>O protótipo é colocado em situação real para observar falhas de leitura, mecânica e alimentação.</p></li><li class="reveal"><b>04</b><strong>Registrar</strong><p>Vídeo e fotografia documentam tanto o resultado quanto versões intermediárias que ajudam a reconstruir o processo.</p></li></ol></div></section>
 
-    <section id="contato" class="contact section-white">
-      <div class="contact-top reveal"><span>05 / contato</span><span>São Paulo · Brasil</span></div>
-      <h2 class="contact-title reveal">Tecnologia<br><em>improvisada,</em><br>sensível e viva.</h2>
-      <div class="contact-links reveal">
-        <a href="mailto:labyrtcontact@gmail.com">labyrtcontact@gmail.com ↗</a>
-        <a href="https://github.com/labyrt" target="_blank" rel="noopener noreferrer">github / labyrt ↗</a>
-      </div>
-      <div class="contact-bottom reveal">
-        <p>SUPERGAMBIARRA ELETRÔNICA</p><p>LUCY MAZZINI + ARIA BORBA</p><p>© 2026</p>
-      </div>
-    </section>
+    <footer id="contato" class="footer"><div class="footer-grid"><div class="footer-title reveal"><span class="mono">CONTATO / SUPERGAMBIARRA ELETRÔNICA</span><h2>LUCY MAZZINI<br>+ ARIA BORBA</h2></div><div class="footer-contact reveal"><a href="mailto:labyrtcontact@gmail.com">labyrtcontact@gmail.com ↗</a><a href="https://github.com/labyrt" target="_blank" rel="noopener">github.com/labyrt ↗</a></div></div><div class="footer-band" aria-hidden="true"><span>ARDUINO</span><span>PROCESSING</span><span>ELETRÔNICA</span><span>VÍDEO</span></div><p class="credits mono">SUPERGAMBIARRA ELETRÔNICA / LUCY MAZZINI + ARIA BORBA / 2026</p></footer>
   </main>
-
-  <dialog id="mediaDialog" class="media-dialog">
-    <button class="dialog-close" aria-label="Fechar vídeo">×</button>
-    <div class="dialog-meta"><span id="dialogTitle">Vídeo</span><span>SUPERGAMBIARRA / ARQUIVO</span></div>
-    <video id="dialogVideo" controls playsinline></video>
-  </dialog>
 </body>
 </html>

@@ -1,158 +1,217 @@
-<!DOCTYPE html>
-<html lang="pt-br">
+<!doctype html>
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>labyrt | portfolio</title>
-    <meta name="description" content="Portfólio minimalista de labyrt.">
-
-    <link rel="stylesheet" href="./main.css">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#050505" />
+  <meta name="description" content="Supergambiarra Eletrônica — portfolio autoral de Lucy Mazzini e Aria Borba. Arduino, Processing, instalações, circuito e imagem em movimento." />
+  <title>Supergambiarra Eletrônica — Lucy Mazzini + Aria Borba</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,600;0,6..96,900;1,6..96,400&family=Syne:wght@400..800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./main.css" />
+  <script defer src="./main.js"></script>
 </head>
 <body>
-    <header class="topbar">
-        <div class="container topbar-inner">
-            <a class="brand" href="#top">labyrt</a>
+  <div class="progress" aria-hidden="true"><span></span></div>
+  <div class="cursor" aria-hidden="true"><span>VER</span></div>
 
-            <nav class="nav">
-                <a href="#works">works</a>
-                <a href="#contact">contact</a>
-            </nav>
+  <header class="site-header">
+    <a class="wordmark" href="#top" aria-label="Supergambiarra Eletrônica — início">
+      <span>SUPER</span><span>GAMBIARRA</span><span>ELETRÔNICA</span>
+    </a>
+    <nav aria-label="Navegação principal">
+      <a href="#sobre">sobre</a>
+      <a href="#projetos">projetos</a>
+      <a href="#videos">vídeos</a>
+      <a href="#contato">contato</a>
+    </nav>
+    <div class="header-meta">SP / BR · 2026</div>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-labelledby="hero-title">
+      <canvas id="signalCanvas" class="signal-canvas" aria-hidden="true"></canvas>
+      <svg class="hero-curve" viewBox="0 0 1200 900" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M-120,720 C220,510 470,820 820,570 C1010,435 1090,235 1320,105" />
+      </svg>
+      <div class="hero-index" aria-hidden="true">SGE—001</div>
+      <div class="hero-copy">
+        <p class="eyebrow reveal">laboratório artístico · circuito · código · matéria</p>
+        <h1 id="hero-title" class="display-title reveal">
+          <span>SUPER</span>
+          <span class="serif">gambiarra</span>
+          <span>ELETRÔNICA</span>
+        </h1>
+        <p class="hero-sub reveal">Portfolio de experimentações em Arduino, Processing, vídeo, instalação e construção eletrônica.</p>
+      </div>
+      <div class="hero-media reveal" data-parallax="0.035">
+        <div class="video-frame hero-video-frame">
+          <video class="hero-video" autoplay muted loop playsinline preload="auto" poster="https://drive.google.com/thumbnail?id=1KcezxCvA__Im8ytMaETh_ZJCtRYrYgh-&sz=w1800">
+            <source src="https://drive.google.com/uc?export=download&id=1KcezxCvA__Im8ytMaETh_ZJCtRYrYgh-" type="video/mp4" />
+          </video>
+          <div class="video-corner corner-a"></div><div class="video-corner corner-b"></div>
+          <span class="hero-media-label">logo / motion study</span>
         </div>
-    </header>
-
-    <main id="top">
-        <section class="hero">
-            <div class="container hero-grid">
-                <div class="hero-copy">
-                    <p class="eyebrow">portfolio</p>
-                    <h1>labyrt</h1>
-                    <p class="hero-subtitle">selected works 2024</p>
-                </div>
-
-                <aside class="hero-card">
-                    <div class="hero-card-top">
-                        <span>visual index</span>
-                        <span>004</span>
-                    </div>
-
-                    <div class="hero-profile">
-                        <img src="./images/profile.png" alt="labyrt">
-                    </div>
-
-                    <div class="hero-card-bottom">
-                        <span>minimal archive</span>
-                        <span>art / design / object</span>
-                    </div>
-                </aside>
-            </div>
-        </section>
-
-        <section class="works" id="works">
-            <div class="container works-stack">
-                <article class="work reveal">
-                    <div class="work-copy">
-                        <span class="work-number">01</span>
-                        <h2>Cidade sem título</h2>
-                        <p>Bienal SP · 2024</p>
-                    </div>
-
-                    <figure class="work-media work-media-contain">
-                        <img src="./images/project-1.jpg" alt="Cidade sem título">
-                    </figure>
-                </article>
-
-                <article class="work work-right reveal">
-                    <div class="work-copy">
-                        <span class="work-number">02</span>
-                        <h2>Elegance</h2>
-                        <p>Victorica, La Pampa · 2024</p>
-                    </div>
-
-                    <figure class="work-media work-media-contain">
-                        <img src="./images/project-2.jpg" alt="Elegance">
-                    </figure>
-                </article>
-
-                <article class="work reveal">
-                    <div class="work-copy">
-                        <span class="work-number">03</span>
-                        <h2>Cidade sem teto</h2>
-                        <p>Bienal SP · 2024</p>
-                    </div>
-
-                    <figure class="work-media work-media-full">
-                        <img src="./images/project-3.jpg" alt="Cidade sem teto">
-                    </figure>
-                </article>
-            </div>
-        </section>
-
-        <section class="contact" id="contact">
-            <div class="container contact-grid">
-                <div class="contact-title">
-                    <p class="eyebrow">contact</p>
-                    <h2>labyrt</h2>
-                </div>
-
-                <form class="contact-form">
-                    <input type="text" placeholder="Nome" required>
-                    <input type="email" placeholder="E-mail" required>
-                    <textarea placeholder="Mensagem" required></textarea>
-                    <button type="submit">enviar</button>
-                </form>
-
-                <div class="socials">
-                    <a href="#" aria-label="GitHub">
-                        <img src="./images/github.png" alt="GitHub">
-                    </a>
-                    <a href="#" aria-label="Instagram">
-                        <img src="./images/instagram.png" alt="Instagram">
-                    </a>
-                    <a href="#" aria-label="LinkedIn">
-                        <img src="./images/linkedin.png" alt="LinkedIn">
-                    </a>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="footer">
-        <div class="container footer-inner">
-            <span>labyrt</span>
-            <a href="#top">back to top</a>
+      </div>
+      <div class="hero-bottom reveal">
+        <p>Lucy Mazzini + Aria Borba</p>
+        <div class="hero-actions">
+          <a class="arrow-link" href="#projetos">ver projetos <span>↘</span></a>
+          <a class="arrow-link" href="#videos">assistir vídeos <span>↘</span></a>
         </div>
-    </footer>
+      </div>
+      <div class="scroll-mark" aria-hidden="true"><span>scroll</span><i></i></div>
+    </section>
 
-    <script>
-        const revealObserver = new IntersectionObserver((entries) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('is-visible');
-                }
-            });
-        }, { threshold: 0.18 });
+    <section id="sobre" class="about section-white">
+      <div class="section-number">01</div>
+      <div class="about-grid">
+        <p class="kicker reveal">Não é tecnologia como acabamento. É tecnologia como matéria.</p>
+        <div class="about-statement reveal">
+          <p><em>Supergambiarra Eletrônica</em> é um laboratório artístico e experimental criado por <strong>Lucy Mazzini</strong> e <strong>Aria Borba</strong>.</p>
+          <p>Arduino funciona como núcleo físico: sensores, motores, luz, fios, solda e resposta. Processing prolonga o circuito para a imagem, o ritmo e o movimento.</p>
+        </div>
+      </div>
+      <div class="taxonomy reveal" aria-label="Informações do projeto">
+        <article><span>autoria</span><strong>Lucy Mazzini<br>Aria Borba</strong></article>
+        <article><span>núcleo</span><strong>Arduino<br>eletrônica criativa</strong></article>
+        <article><span>extensões</span><strong>Processing<br>vídeo · sensores</strong></article>
+        <article><span>território</span><strong>instalação<br>objeto · protótipo</strong></article>
+      </div>
+      <div class="marquee" aria-hidden="true">
+        <div>ARTE + CIRCUITO · GAMBIARRA COMO LINGUAGEM · CORPO + SENSOR · ERRO + INVENÇÃO · ARTE + CIRCUITO · GAMBIARRA COMO LINGUAGEM · CORPO + SENSOR · ERRO + INVENÇÃO ·</div>
+      </div>
+    </section>
 
-        document.querySelectorAll('.reveal').forEach((el) => revealObserver.observe(el));
+    <section id="projetos" class="projects section-black">
+      <div class="section-head reveal">
+        <span class="section-number">02</span>
+        <h2>Trabalhos<br><em>selecionados</em></h2>
+        <p>Construções, instalações, estudos de circuito e visualidades que partem do fazer manual e do código.</p>
+      </div>
 
-        const works = document.querySelectorAll('.work');
+      <article class="feature-work reveal" data-cursor="abrir">
+        <div class="feature-media" data-parallax="0.018">
+          <img src="https://drive.google.com/thumbnail?id=1KiKiJ96_MfHETMW7nxieYnocGGz1eecY&sz=w1800" alt="Instalação eletrônica exposta em ambiente expositivo" loading="lazy" />
+          <span class="media-tag">instalação / Arduino / sensor</span>
+        </div>
+        <div class="feature-copy">
+          <div class="work-topline"><span>SGE—01</span><span>2026</span></div>
+          <h3>Sistema<br><em>Exposto</em></h3>
+          <p>Um corpo eletrônico vulnerável que percebe aproximações e responde em gesto. Circuitos e sensores operam menos como máquina utilitária e mais como sistema sensível: atento, instintivo, em vigília.</p>
+          <div class="materials">silicone · cabelo humano · Arduino Uno R3 · sensores · cobre · motor DC · lâmpada · MOSFET · relé · madeira</div>
+          <button class="text-button js-open-media" data-src="https://drive.google.com/uc?export=download&id=1h4R6qcdQ-OozdHZS8L86oEw6yJueI-rb" data-title="Sistema Exposto — instalação">ver em movimento ↗</button>
+        </div>
+      </article>
 
-        function updateParallax() {
-            const vh = window.innerHeight;
+      <div class="work-grid">
+        <article class="work-card reveal" data-cursor="ver">
+          <div class="work-image portrait"><img src="https://drive.google.com/thumbnail?id=1rtpdmugNIc_Sdmq_hbKKlDOVgyem_Cad&sz=w1800" alt="Processo material de construção de objeto escultórico" loading="lazy"></div>
+          <div class="work-card-info"><span>SGE—02 / processo</span><h3>Corpo como <em>protótipo</em></h3><p>Matéria orgânica, objeto e circuito dividindo o mesmo estágio de pesquisa.</p></div>
+        </article>
+        <article class="work-card reveal offset" data-cursor="ver">
+          <div class="work-image portrait"><img src="https://drive.google.com/thumbnail?id=1_Q7O5KZ_0SUS1RRdwqpNcXakfFKRZWFB&sz=w1800" alt="Detalhe de fios, circuito e mecanismo em processo" loading="lazy"></div>
+          <div class="work-card-info"><span>SGE—03 / construção</span><h3>Fio como <em>desenho</em></h3><p>Estruturas aparentes: a ligação elétrica também compõe a forma.</p></div>
+        </article>
+        <article class="work-card reveal wide" data-cursor="ver">
+          <div class="work-image landscape"><img src="https://drive.google.com/thumbnail?id=1Q7mLNPrgASRzyd_X8VGDJmcqpuee28rh&sz=w1800" alt="Estrutura eletrônica em montagem sobre banco de madeira" loading="lazy"></div>
+          <div class="work-card-info"><span>SGE—04 / montagem</span><h3>Máquina <em>sem carcaça</em></h3><p>O sistema não esconde sua engenharia; fios, placa e suporte permanecem como linguagem.</p></div>
+        </article>
+      </div>
+    </section>
 
-            works.forEach((work) => {
-                const rect = work.getBoundingClientRect();
-                const progress = 1 - Math.min(Math.max(rect.top / vh, 0), 1);
-                work.style.setProperty('--parallax', progress.toFixed(3));
-            });
+    <section class="exposed section-white" aria-label="Sistema Exposto em detalhe">
+      <div class="exposed-collage">
+        <figure class="collage-a reveal"><img src="https://drive.google.com/thumbnail?id=1s27KD_xfe_BO3O71jzClAVsDbmpoB-vB&sz=w1800" alt="Vista frontal da instalação eletrônica" loading="lazy"></figure>
+        <figure class="collage-b reveal"><img src="https://drive.google.com/thumbnail?id=1CQLN3oUKhweRH1UlVGAHqbr8UBGld68u&sz=w1800" alt="Detalhe de circuito em construção" loading="lazy"></figure>
+        <figure class="collage-c reveal"><img src="https://drive.google.com/thumbnail?id=1MKcrnAKRBPyw0ZRtQ0NC3YCcHOngZkZ8&sz=w1800" alt="Estudo visual e técnico em preto e branco" loading="lazy"></figure>
+        <div class="collage-copy reveal">
+          <span>corpo / presença / resposta</span>
+          <blockquote>“Ao sentir, entende — e por isso sobrevive.”</blockquote>
+          <p>O dispositivo não tenta parecer invisível. Ele deixa a técnica exposta e transforma aproximação em acontecimento.</p>
+        </div>
+      </div>
+    </section>
 
-            requestAnimationFrame(updateParallax);
-        }
+    <section id="videos" class="motion section-black">
+      <div class="section-head motion-head reveal">
+        <span class="section-number">03</span>
+        <h2>Sinais em<br><em>movimento</em></h2>
+        <p>Vídeo como registro, linguagem e extensão do circuito. Estudos em Processing, documentação de Arduino, montagem e edição.</p>
+      </div>
+      <div class="motion-grid">
+        <button class="motion-card reveal js-open-media" data-src="https://drive.google.com/uc?export=download&id=1riBEIot8w-QJ5tmhfrKBJc1BWRZWPE-r" data-title="Processing — formas">
+          <video muted loop playsinline preload="metadata" poster="https://drive.google.com/thumbnail?id=1riBEIot8w-QJ5tmhfrKBJc1BWRZWPE-r&sz=w1800"><source src="https://drive.google.com/uc?export=download&id=1riBEIot8w-QJ5tmhfrKBJc1BWRZWPE-r" type="video/mp4"></video>
+          <span class="motion-index">01</span><span class="motion-title">Processing / formas</span><span class="play-mark">↗</span>
+        </button>
+        <button class="motion-card reveal js-open-media" data-src="https://drive.google.com/uc?export=download&id=1VuXMRqbeJXrA7GWNKZMBBzB45GejSKtD" data-title="Processing — barras">
+          <video muted loop playsinline preload="metadata" poster="https://drive.google.com/thumbnail?id=1VuXMRqbeJXrA7GWNKZMBBzB45GejSKtD&sz=w1800"><source src="https://drive.google.com/uc?export=download&id=1VuXMRqbeJXrA7GWNKZMBBzB45GejSKtD" type="video/mp4"></video>
+          <span class="motion-index">02</span><span class="motion-title">Processing / barras</span><span class="play-mark">↗</span>
+        </button>
+        <button class="motion-card reveal js-open-media" data-src="https://drive.google.com/uc?export=download&id=1XptZejpY3dkCRRJu6stgiKtmWno60dNc" data-title="Circuito em movimento">
+          <video muted loop playsinline preload="metadata" poster="https://drive.google.com/thumbnail?id=1XptZejpY3dkCRRJu6stgiKtmWno60dNc&sz=w1800"><source src="https://drive.google.com/uc?export=download&id=1XptZejpY3dkCRRJu6stgiKtmWno60dNc" type="video/mp4"></video>
+          <span class="motion-index">03</span><span class="motion-title">Circuito / mecanismo</span><span class="play-mark">↗</span>
+        </button>
+        <button class="motion-card reveal js-open-media" data-src="https://drive.google.com/uc?export=download&id=1Zjs6W2YwNJFFg0eT2fdWUzLOnxk7vRYr" data-title="Bancada Arduino">
+          <video muted loop playsinline preload="metadata" poster="https://drive.google.com/thumbnail?id=1Zjs6W2YwNJFFg0eT2fdWUzLOnxk7vRYr&sz=w1800"><source src="https://drive.google.com/uc?export=download&id=1Zjs6W2YwNJFFg0eT2fdWUzLOnxk7vRYr" type="video/mp4"></video>
+          <span class="motion-index">04</span><span class="motion-title">Arduino / bancada</span><span class="play-mark">↗</span>
+        </button>
+        <button class="motion-card reveal js-open-media motion-wide" data-src="https://drive.google.com/uc?export=download&id=1hrnGtdwttfOPOOwF9Qe8AihtV5vtjSaJ" data-title="Edição / processo">
+          <video muted loop playsinline preload="metadata" poster="https://drive.google.com/thumbnail?id=1hrnGtdwttfOPOOwF9Qe8AihtV5vtjSaJ&sz=w1800"><source src="https://drive.google.com/uc?export=download&id=1hrnGtdwttfOPOOwF9Qe8AihtV5vtjSaJ" type="video/mp4"></video>
+          <span class="motion-index">05</span><span class="motion-title">Edição / construção</span><span class="play-mark">↗</span>
+        </button>
+      </div>
+    </section>
 
-        updateParallax();
-    </script>
+    <section id="processo" class="process section-white">
+      <div class="section-head reveal">
+        <span class="section-number">04</span>
+        <h2>Método<br><em>instável</em></h2>
+        <p>O processo não é uma linha limpa. É um circuito de retorno: testar, errar, adaptar, montar, desmontar, registrar.</p>
+      </div>
+      <div class="process-rail" aria-label="Etapas do processo">
+        <article class="reveal"><b>01</b><h3>Pesquisar</h3><p>imaginar comportamento, matéria e presença.</p></article>
+        <article class="reveal"><b>02</b><h3>Testar</h3><p>sensor, tensão, motor, código, ruído.</p></article>
+        <article class="reveal"><b>03</b><h3>Gambiarra</h3><p>adaptar o que existe até surgir outra função.</p></article>
+        <article class="reveal"><b>04</b><h3>Programar</h3><p>Arduino como reflexo; Processing como extensão visual.</p></article>
+        <article class="reveal"><b>05</b><h3>Expor</h3><p>deixar a técnica aparente e o público completar a obra.</p></article>
+      </div>
+      <div class="manifesto reveal">
+        <p>protótipo <i>é</i> obra</p><p>erro <i>é</i> método</p><p>fio <i>é</i> desenho</p><p>resposta <i>é</i> presença</p>
+      </div>
+    </section>
+
+    <section class="press section-black">
+      <div class="press-line reveal">
+        <span>arquivo / exposição</span>
+        <a href="https://jornal.usp.br/cultura/exposicao-na-usp-une-a-cidade-o-ambiente-e-a-educacao/" target="_blank" rel="noopener noreferrer">
+          Jornal USP — exposição INOVA <span>↗</span>
+        </a>
+      </div>
+      <div class="press-visual reveal">
+        <img src="https://drive.google.com/thumbnail?id=1SvyZ6qioEgIUSJ8uOeVX5U4NsUks7rwL&sz=w1800" alt="Estrutura da instalação em área externa" loading="lazy">
+        <div class="press-caption">documentação / Supergambiarra Eletrônica</div>
+      </div>
+    </section>
+
+    <section id="contato" class="contact section-white">
+      <div class="contact-top reveal"><span>05 / contato</span><span>São Paulo · Brasil</span></div>
+      <h2 class="contact-title reveal">Tecnologia<br><em>improvisada,</em><br>sensível e viva.</h2>
+      <div class="contact-links reveal">
+        <a href="mailto:labyrtcontact@gmail.com">labyrtcontact@gmail.com ↗</a>
+        <a href="https://github.com/labyrt" target="_blank" rel="noopener noreferrer">github / labyrt ↗</a>
+      </div>
+      <div class="contact-bottom reveal">
+        <p>SUPERGAMBIARRA ELETRÔNICA</p><p>LUCY MAZZINI + ARIA BORBA</p><p>© 2026</p>
+      </div>
+    </section>
+  </main>
+
+  <dialog id="mediaDialog" class="media-dialog">
+    <button class="dialog-close" aria-label="Fechar vídeo">×</button>
+    <div class="dialog-meta"><span id="dialogTitle">Vídeo</span><span>SUPERGAMBIARRA / ARQUIVO</span></div>
+    <video id="dialogVideo" controls playsinline></video>
+  </dialog>
 </body>
 </html>
